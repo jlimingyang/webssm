@@ -1,0 +1,94 @@
+group 'com.item1024'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'kotlin'
+apply plugin: 'war'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.apache.tomcat:tomcat-servlet-api:8.0.24'
+    compile 'jstl:jstl:1.2'
+    compile 'org.springframework:spring-webmvc:4.1.7.RELEASE'
+    compile 'org.springframework:spring-jdbc:4.1.7.RELEASE'
+    compile group: 'org.springframework.session', name: 'spring-session-data-redis', version: '1.3.1.RELEASE'
+    compile 'com.alibaba:druid:1.0.15'
+    compile 'org.aspectj:aspectjweaver:1.8.6'
+    compile group: 'com.aliyun.mns', name: 'aliyun-sdk-mns', version: '1.1.8.4'
+    compile 'mysql:mysql-connector-java:5.1.36'
+    //shiro
+//    compile group: 'org.apache.shiro', name: 'shiro-spring', version: '1.4.0'
+//    compile group: 'org.apache.shiro', name: 'shiro-web', version: '1.4.0'
+//    compile group: 'org.apache.shiro', name: 'shiro-core', version: '1.4.0'
+//    compile group: 'org.apache.shiro', name: 'shiro-ehcache', version: '1.4.0'
+
+    compile 'org.mybatis:mybatis-spring:1.2.3'
+    compile 'org.mybatis:mybatis:3.3.0'
+    compile group: 'org.projectlombok', name: 'lombok', version: '1.16.16'
+    compile group: 'com.google.code.gson', name: 'gson', version: '2.8.1'
+    compile group: 'log4j', name: 'log4j', version: '1.2.17'
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
+    compile group: 'javax', name: 'javaee-api', version: '7.0'
+    compile group: 'org.bouncycastle', name: 'bcprov-jdk15on', version: '1.57'
+    compile group: 'org.apache.httpcomponents', name: 'httpmime', version: '4.5.3'
+    compile group: 'org.freemarker', name: 'freemarker', version: '2.3.23'
+    compile group: 'org.hibernate', name: 'hibernate-validator', version: '5.4.1.Final'
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.5'
+    compile group: 'commons-fileupload', name: 'commons-fileupload', version: '1.3.2'
+    providedCompile 'javax.servlet:servlet-api:2.5'
+    compile group: 'junit', name: 'junit', version: '4.12'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
+    compile group: 'redis.clients', name: 'jedis', version: '2.9.0'
+    compile group: 'org.slf4j', name: 'slf4j-nop', version: '1.7.25'
+    testCompile group: 'org.springframework', name: 'spring-test', version: '4.2.9.RELEASE'
+    compile group: 'org.mybatis.generator', name: 'mybatis-generator-core', version: '1.3.2'
+    compile group: 'com.github.pagehelper', name: 'pagehelper', version: '4.2.1'
+    // https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp
+    compile group: 'com.squareup.okhttp3', name: 'okhttp', version: '3.8.1'
+    // https://mvnrepository.com/artifact/net.oschina.zcx7878/fastdfs-client-java
+    compile group: 'net.oschina.zcx7878', name: 'fastdfs-client-java', version: '1.27.0.0'
+    // https://mvnrepository.com/artifact/commons-net/commons-net
+    compile group: 'commons-net', name: 'commons-net', version: '3.6'
+
+    // https://mvnrepository.com/artifact/com.thetransactioncompany/cors-filter
+    compile group: 'com.thetransactioncompany', name: 'cors-filter', version: '2.2.1'
+    // https://mvnrepository.com/artifact/com.thetransactioncompany/java-property-utils
+    compile group: 'com.thetransactioncompany', name: 'java-property-utils', version: '1.9.1'
+    // https://mvnrepository.com/artifact/com.nimbusds/nimbus-jose-jwt
+    compile group: 'com.nimbusds', name: 'nimbus-jose-jwt', version: '4.13.1'
+
+    // https://mvnrepository.com/artifact/org.quartz-scheduler/quartz
+    compile group: 'org.quartz-scheduler', name: 'quartz', version: '2.3.0'
+    // https://mvnrepository.com/artifact/org.springframework/spring-context-support
+    compile group: 'org.springframework', name: 'spring-context-support', version: '4.3.10.RELEASE'
+
+    // https://mvnrepository.com/artifact/org.jdom/jdom
+    compile group: 'org.jdom', name: 'jdom', version: '2.0.2'
+
+    // https://mvnrepository.com/artifact/com.google.zxing/javase
+    compile group: 'com.google.zxing', name: 'javase', version: '3.1.0'
+
+    // https://mvnrepository.com/artifact/com.github.wxpay/wxpay-sdk
+    compile group: 'com.github.wxpay', name: 'wxpay-sdk', version: '0.0.3'
+
+    // https://mvnrepository.com/artifact/org.apache.solr/solr-solrj
+    compile group: 'org.apache.solr', name: 'solr-solrj', version: '7.0.0'
+
+
+
+
+}
+buildscript {
+    ext.kotlin_version = '1.1.2-5'
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}

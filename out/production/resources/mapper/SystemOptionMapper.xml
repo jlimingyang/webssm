@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.item1024.mapper.SystemOptionMapper" >
+  <resultMap id="BaseResultMap" type="com.item1024.pojo.SystemOption" >
+    <id column="web_id" property="webId" jdbcType="INTEGER" />
+    <result column="web_name" property="webName" jdbcType="VARCHAR" />
+    <result column="web_image" property="webImage" jdbcType="VARCHAR" />
+    <result column="web_key" property="webKey" jdbcType="VARCHAR" />
+    <result column="web_recordNum" property="webRecordnum" jdbcType="VARCHAR" />
+    <result column="web_copyRight" property="webCopyright" jdbcType="VARCHAR" />
+    <result column="web_maskWord" property="webMaskword" jdbcType="VARCHAR" />
+    <result column="integral_useRule" property="integralUserule" jdbcType="DOUBLE" />
+    <result column="integral_addRule" property="integralAddrule" jdbcType="DOUBLE" />
+    <result column="integral_minusRule" property="integralMinusrule" jdbcType="DOUBLE" />
+    <result column="sale_actorNum" property="saleActornum" jdbcType="INTEGER" />
+    <result column="order_expireTime" property="orderExpiretime" jdbcType="DOUBLE" />
+    <result column="coupon_expireTime" property="couponExpiretime" jdbcType="DOUBLE" />
+    <result column="coupon_warnTime" property="couponWarntime" jdbcType="DOUBLE" />
+    <result column="bill_fee" property="billFee" jdbcType="DOUBLE" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    web_id, web_name, web_image, web_key, web_recordNum, web_copyRight, web_maskWord, 
+    integral_useRule, integral_addRule, integral_minusRule, sale_actorNum, order_expireTime, 
+    coupon_expireTime, coupon_warnTime, bill_fee
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_system_option
+    where web_id = #{webId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_system_option
+    where web_id = #{webId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.item1024.pojo.SystemOption" >
+    insert into t_system_option (web_id, web_name, web_image, 
+      web_key, web_recordNum, web_copyRight, 
+      web_maskWord, integral_useRule, integral_addRule, 
+      integral_minusRule, sale_actorNum, order_expireTime, 
+      coupon_expireTime, coupon_warnTime, bill_fee
+      )
+    values (#{webId,jdbcType=INTEGER}, #{webName,jdbcType=VARCHAR}, #{webImage,jdbcType=VARCHAR}, 
+      #{webKey,jdbcType=VARCHAR}, #{webRecordnum,jdbcType=VARCHAR}, #{webCopyright,jdbcType=VARCHAR}, 
+      #{webMaskword,jdbcType=VARCHAR}, #{integralUserule,jdbcType=DOUBLE}, #{integralAddrule,jdbcType=DOUBLE}, 
+      #{integralMinusrule,jdbcType=DOUBLE}, #{saleActornum,jdbcType=INTEGER}, #{orderExpiretime,jdbcType=DOUBLE}, 
+      #{couponExpiretime,jdbcType=DOUBLE}, #{couponWarntime,jdbcType=DOUBLE}, #{billFee,jdbcType=DOUBLE}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.item1024.pojo.SystemOption" >
+    insert into t_system_option
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="webId != null" >
+        web_id,
+      </if>
+      <if test="webName != null" >
+        web_name,
+      </if>
+      <if test="webImage != null" >
+        web_image,
+      </if>
+      <if test="webKey != null" >
+        web_key,
+      </if>
+      <if test="webRecordnum != null" >
+        web_recordNum,
+      </if>
+      <if test="webCopyright != null" >
+        web_copyRight,
+      </if>
+      <if test="webMaskword != null" >
+        web_maskWord,
+      </if>
+      <if test="integralUserule != null" >
+        integral_useRule,
+      </if>
+      <if test="integralAddrule != null" >
+        integral_addRule,
+      </if>
+      <if test="integralMinusrule != null" >
+        integral_minusRule,
+      </if>
+      <if test="saleActornum != null" >
+        sale_actorNum,
+      </if>
+      <if test="orderExpiretime != null" >
+        order_expireTime,
+      </if>
+      <if test="couponExpiretime != null" >
+        coupon_expireTime,
+      </if>
+      <if test="couponWarntime != null" >
+        coupon_warnTime,
+      </if>
+      <if test="billFee != null" >
+        bill_fee,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="webId != null" >
+        #{webId,jdbcType=INTEGER},
+      </if>
+      <if test="webName != null" >
+        #{webName,jdbcType=VARCHAR},
+      </if>
+      <if test="webImage != null" >
+        #{webImage,jdbcType=VARCHAR},
+      </if>
+      <if test="webKey != null" >
+        #{webKey,jdbcType=VARCHAR},
+      </if>
+      <if test="webRecordnum != null" >
+        #{webRecordnum,jdbcType=VARCHAR},
+      </if>
+      <if test="webCopyright != null" >
+        #{webCopyright,jdbcType=VARCHAR},
+      </if>
+      <if test="webMaskword != null" >
+        #{webMaskword,jdbcType=VARCHAR},
+      </if>
+      <if test="integralUserule != null" >
+        #{integralUserule,jdbcType=DOUBLE},
+      </if>
+      <if test="integralAddrule != null" >
+        #{integralAddrule,jdbcType=DOUBLE},
+      </if>
+      <if test="integralMinusrule != null" >
+        #{integralMinusrule,jdbcType=DOUBLE},
+      </if>
+      <if test="saleActornum != null" >
+        #{saleActornum,jdbcType=INTEGER},
+      </if>
+      <if test="orderExpiretime != null" >
+        #{orderExpiretime,jdbcType=DOUBLE},
+      </if>
+      <if test="couponExpiretime != null" >
+        #{couponExpiretime,jdbcType=DOUBLE},
+      </if>
+      <if test="couponWarntime != null" >
+        #{couponWarntime,jdbcType=DOUBLE},
+      </if>
+      <if test="billFee != null" >
+        #{billFee,jdbcType=DOUBLE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.item1024.pojo.SystemOption" >
+    update t_system_option
+    <set >
+      <if test="webName != null" >
+        web_name = #{webName,jdbcType=VARCHAR},
+      </if>
+      <if test="webImage != null" >
+        web_image = #{webImage,jdbcType=VARCHAR},
+      </if>
+      <if test="webKey != null" >
+        web_key = #{webKey,jdbcType=VARCHAR},
+      </if>
+      <if test="webRecordnum != null" >
+        web_recordNum = #{webRecordnum,jdbcType=VARCHAR},
+      </if>
+      <if test="webCopyright != null" >
+        web_copyRight = #{webCopyright,jdbcType=VARCHAR},
+      </if>
+      <if test="webMaskword != null" >
+        web_maskWord = #{webMaskword,jdbcType=VARCHAR},
+      </if>
+      <if test="integralUserule != null" >
+        integral_useRule = #{integralUserule,jdbcType=DOUBLE},
+      </if>
+      <if test="integralAddrule != null" >
+        integral_addRule = #{integralAddrule,jdbcType=DOUBLE},
+      </if>
+      <if test="integralMinusrule != null" >
+        integral_minusRule = #{integralMinusrule,jdbcType=DOUBLE},
+      </if>
+      <if test="saleActornum != null" >
+        sale_actorNum = #{saleActornum,jdbcType=INTEGER},
+      </if>
+      <if test="orderExpiretime != null" >
+        order_expireTime = #{orderExpiretime,jdbcType=DOUBLE},
+      </if>
+      <if test="couponExpiretime != null" >
+        coupon_expireTime = #{couponExpiretime,jdbcType=DOUBLE},
+      </if>
+      <if test="couponWarntime != null" >
+        coupon_warnTime = #{couponWarntime,jdbcType=DOUBLE},
+      </if>
+      <if test="billFee != null" >
+        bill_fee = #{billFee,jdbcType=DOUBLE},
+      </if>
+    </set>
+    where web_id = #{webId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.item1024.pojo.SystemOption" >
+    update t_system_option
+    set web_name = #{webName,jdbcType=VARCHAR},
+      web_image = #{webImage,jdbcType=VARCHAR},
+      web_key = #{webKey,jdbcType=VARCHAR},
+      web_recordNum = #{webRecordnum,jdbcType=VARCHAR},
+      web_copyRight = #{webCopyright,jdbcType=VARCHAR},
+      web_maskWord = #{webMaskword,jdbcType=VARCHAR},
+      integral_useRule = #{integralUserule,jdbcType=DOUBLE},
+      integral_addRule = #{integralAddrule,jdbcType=DOUBLE},
+      integral_minusRule = #{integralMinusrule,jdbcType=DOUBLE},
+      sale_actorNum = #{saleActornum,jdbcType=INTEGER},
+      order_expireTime = #{orderExpiretime,jdbcType=DOUBLE},
+      coupon_expireTime = #{couponExpiretime,jdbcType=DOUBLE},
+      coupon_warnTime = #{couponWarntime,jdbcType=DOUBLE},
+      bill_fee = #{billFee,jdbcType=DOUBLE}
+    where web_id = #{webId,jdbcType=INTEGER}
+  </update>
+</mapper>
